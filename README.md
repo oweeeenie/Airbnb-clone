@@ -1,8 +1,5 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a clone of the popular Airbnb website built with React, TailwindCSS, and random image API integration.
+I am creating this website to better solidify my understanding of a few CORE concepts in react. 
+This is my largest project to date, including all of what I've learned (HTML/CSS/TAILWIND/REACT/JS/MEDIA QUERIES)
