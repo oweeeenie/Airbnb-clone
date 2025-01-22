@@ -13,7 +13,7 @@ function Header() {
             <button className="experiences btn-custom">Experiences</button>
           </div>
 
-          <div className="right-info flex items-center relative right-20 space-x-6">
+          <div className="right-info flex items-center relative right-20 gap-1">
             <button className="airbnb-your-home btn-custom">
               Airbnb your home
             </button>
