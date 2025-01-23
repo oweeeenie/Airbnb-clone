@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function PropertyFilter() {
-  // we're gong to use these props to render in components
+  // we're going to use these props to render in components
 
   const filters = [
     { label: 'OMG!', icon: 'fa-wand-magic-sparkles', isActive: false, id: '1' },
@@ -24,6 +24,7 @@ export default function PropertyFilter() {
     { label: 'Business', icon: 'fa-handshake', isActive: false, id: '13' },
     { label: 'Airport', icon: 'fa-plane', isActive: false, id: '14' },
     { label: 'Sky View', icon: 'fa-moon', isActive: false, id: '15' },
+    { label: 'Mountain', icon: 'fa-mountain', isActive: false, id: '16' },
   ];
 
   const [active, setActive] = useState('null');
@@ -39,19 +40,35 @@ export default function PropertyFilter() {
   return (
     <>
       {/* render all the props in [filters] */}
-      <div className="property-filters flex items-center border-t mt-10 gap-12 pt-2">
-        {filters.map((filter) => (
-          <div
-            className={`OMG flex flex-col items-center filter-button relative left-20 ${
-              filter.id === active ? 'text-black animate-selectedEffect' : ''
-            }`}
-            key={filter.id}
-            onClick={() => updateIsActive(filter)}
-          >
-            <i className={`fa-solid ${filter.icon}`}></i>
-            <p>{filter.label}</p>
+      <div className="property-filters-container flex items-center border-t mt-10 pt-4">
+        <div className="filter-scroll flex gap-[50px] items-center relative left-20">
+          {filters.map((filter) => (
+            <div
+              className={`flex flex-col items-center filter-button ${
+                filter.id === active ? 'text-black animate-selectedEffect' : ''
+              }`}
+              key={filter.id}
+              onClick={() => updateIsActive(filter)}
+            >
+              <i className={`fa-solid ${filter.icon}`}></i>
+              <p>{filter.label}</p>
+            </div>
+          ))}
+        </div>
+        {/* scroll button for filters */}
+        <div className="button-wrapper items-center flex justify-end relative mr-20 gap-5 flex-grow">
+          {/* filter + display total buttons */}
+          <div className="filters-button flex gap-2 items-center border p-4 rounded-lg cursor-pointer text-main hover:border-black transition-all duration-300">
+            <i className="fa-solid fa-bars-staggered"></i>
+            Filters
           </div>
-        ))}
+          <div className="total-button flex gap-2 items-center border p-4 rounded-lg cursor-pointer text-main hover:border-black transition-all duration-300">
+            Display total before taxes
+            <button className="bg-gray-300 h-[25px] w-[35px] rounded-full">
+              <div className="bg-black h-[15px] w-[15px] rounded-full relative left-1"></div>
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

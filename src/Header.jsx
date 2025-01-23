@@ -27,7 +27,7 @@ function Header() {
 
         {/* lower header */}
         {/* WHERE */}
-        <div className="header-lower flex items-center justify-center ">
+        <div className="header-lower flex justify-center">
           <div className="mini-wrapper shadow-xl border rounded-full flex max-w-[900px] max-h-[80px]">
             <div className="where relative p-5 pl-5 btn-custom cursor-pointer w-[300px] rounded-full">
               <h1 className="text-important text-sm">Where</h1>
