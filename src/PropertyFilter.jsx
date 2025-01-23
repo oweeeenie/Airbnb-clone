@@ -28,6 +28,7 @@ export default function PropertyFilter() {
   ];
 
   const [active, setActive] = useState('null');
+  const [totalToggle, setTotalToggle] = useState(false);
 
   function updateIsActive(filter) {
     if (filter.id === active) {
@@ -56,16 +57,32 @@ export default function PropertyFilter() {
           ))}
         </div>
         {/* scroll button for filters */}
+
         <div className="button-wrapper items-center flex justify-end relative mr-20 gap-5 flex-grow">
           {/* filter + display total buttons */}
+
           <div className="filters-button flex gap-2 items-center border p-4 rounded-lg cursor-pointer text-main hover:border-black transition-all duration-300">
             <i className="fa-solid fa-bars-staggered"></i>
             Filters
           </div>
-          <div className="total-button flex gap-2 items-center border p-4 rounded-lg cursor-pointer text-main hover:border-black transition-all duration-300">
+          <div
+            className="total-button flex gap-2 items-center border p-4 rounded-lg cursor-pointer text-main hover:border-black transition-all duration-300"
+            onClick={() => setTotalToggle(!totalToggle)}
+          >
             Display total before taxes
-            <button className="bg-gray-300 h-[25px] w-[35px] rounded-full">
-              <div className="bg-black h-[15px] w-[15px] rounded-full relative left-1"></div>
+            <button
+              className={`button-background  h-[30px] w-[45px] rounded-full hover:bg-logo ${
+                totalToggle ? 'bg-logo' : 'bg-gray-300'
+              }`}
+            >
+              {/* button changes based on toggled or not */}
+              <div
+                className={`bg-white h-[24px] w-[24px] rounded-full relative left-1 transition-all duration-300 ${
+                  totalToggle ? ' translate-x-[14px]' : ''
+                }`}
+              >
+                {totalToggle && <span className="text-black">✓</span>}
+              </div>
             </button>
           </div>
         </div>
